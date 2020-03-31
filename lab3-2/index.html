@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная №3-2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <form class="form" method="post" action="https://httpbin.org/post">
+                <div class="fields">
+                    <label for="login">Введите логин</label>
+                    <div class="controls">
+                        <input id="login" type="text" name="login" placeholder="username" required="">
+                    </div>
+                </div>
+
+                <div class="fields">
+                    <label for="password">Введите пароль</label>
+                    <div class="controls">
+                        <input id="password" type="password" name="password" placeholder="password" required="">
+                    </div>
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="remember_me">
+                        Запомнить меня
+                    </label>
+                </div>
+                
+                <div class="fields">
+                    <div class="controls">
+                        <input class="button" type="submit" value="Войти">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
