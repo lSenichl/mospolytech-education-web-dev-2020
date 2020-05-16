@@ -1,0 +1,73 @@
+html, body, main {
+    height: 100%;
+}
+
+.calc-container {
+    display: flex;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+.screen {
+    background-color: red;
+    font-size: 50px;
+    height: 100px;
+    width: 500px;
+    padding-top: 20px;
+    text-align: right;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    font-family: orbitron;
+}
+.screen span {
+    margin: 35px;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.digits {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 60%;
+    margin: 10px;
+}
+
+.key {
+    font-size: 45px;
+    border-radius: 100px;
+    padding: 5px;
+    margin: 10px 5px;
+    width: 75px;
+    height: 75px;
+    background-color: rgb(211, 211, 211);
+    font-family: orbitron;
+}
+
+.operation, .bracket, .result, .clear, .digit {
+    width: 75px;
+}
+
+.other {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    width: 40%;
+    margin: 10px;
+}
