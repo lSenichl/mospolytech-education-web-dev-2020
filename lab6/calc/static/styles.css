@@ -57,6 +57,7 @@ html, body, main {
     height: 75px;
     background-color: rgb(211, 211, 211);
     font-family: orbitron;
+    cursor: pointer;
 }
 
 .operation, .bracket, .result, .clear, .digit {
