@@ -1,2 +1,1 @@
-# web-dev-2020
-Мой Telegram для связи: @Crocle
+# Мой Telegram для связи: @Crocle
