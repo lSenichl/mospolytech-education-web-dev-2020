@@ -37,14 +37,14 @@ function tokenize(str) {
         if (isDigit(char) || char == '.') {
             lastNumber += char;
         } else {
-            if(lastNumber.length > 0) {
+            if (lastNumber.length > 0) {
                 tokens.push(lastNumber);
                 lastNumber = '';
             }
-        } 
+        }
         if (isOperation(char) || char == '(' || char == ')') {
             tokens.push(char);
-        } 
+        }
     }
     if (lastNumber.length > 0) {
         tokens.push(lastNumber);
@@ -77,7 +77,7 @@ function compile(str) {
         } else if (token == '(') {
             stack.push(token);
         } else if (token == ')') {
-            while (stack.length > 0 && stack[stack.length-1] != '(') {
+            while (stack.length > 0 && stack[stack.length - 1] != '(') {
                 out.push(stack.pop());
             }
             stack.pop();
@@ -98,8 +98,30 @@ function compile(str) {
 // (https://ru.wikipedia.org/wiki/Обратная_польская_запись#Вычисления_на_стеке).
 
 function evaluate(str) {
-    // your code here
+    let str2 = compile(str);
+
+    let stack = [];
+
+    const operators = {
+        '+': (x, y) => x + y,
+        '-': (x, y) => x - y,
+        '*': (x, y) => x * y,
+        '/': (x, y) => x / y
+    };
+
+    str2.split(' ').forEach((token) => {
+        if (token in operators) {
+            let [y, x] = [stack.pop(), stack.pop()];
+            stack.push(operators[token](x, y));
+        } else {
+            stack.push(parseFloat(token));
+        }
+    });
+
+    return stack.pop();
 }
+
+
 
 // Функция clickHandler предназначена для обработки 
 // событий клика по кнопкам калькулятора. 
@@ -116,11 +138,24 @@ function evaluate(str) {
 // не назначать обработчик для каждой кнопки в отдельности.
 
 function clickHandler(event) {
-    // your code here
-}
+    let target = event.target;
+    if (target.tagName != 'BUTTON') return;
+    let screen = document.getElementById('screen');
 
+    if ((target.textContent == '=') || (target.textContent == 'C')) {
+        if (target.textContent == '=') {
+            screen.innerHTML = evaluate(screen.textContent).toFixed(2);
+        }
+        if (target.textContent == 'C') {
+            screen.innerHTML = null;
+        }
+    } else {
+        screen.innerHTML = screen.textContent + target.textContent;
+    }
+}
 
 // Назначьте нужные обработчики событий.
 window.onload = function () {
-    // your code here
+    let calc = document.getElementById('calc');
+    calc.onclick = clickHandler;
 }
