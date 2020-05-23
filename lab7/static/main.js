@@ -58,6 +58,10 @@ function pageBtnHandler(event) {
     }
 }
 
+function searchBtnHandler(event) {
+    downloadData(1);
+}
+
 function createAuthorElement(record) {
     let user = record.user || {'name': {'first': '', 'last': ''}};
     let authorElement = document.createElement('div');
@@ -108,8 +112,10 @@ function downloadData(page=1) {
     let factsList = document.querySelector('.facts-list');
     let url = new URL(factsList.dataset.url);
     let perPage = document.querySelector('.per-page-btn').value;
+    let search = document.querySelector('.search-field').value;
     url.searchParams.append('page', page);
     url.searchParams.append('per-page', perPage);
+    url.searchParams.append('q', search);
     let xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     xhr.responseType = 'json';
@@ -125,4 +131,10 @@ window.onload = function () {
     downloadData();
     document.querySelector('.pagination').onclick = pageBtnHandler;
     document.querySelector('.per-page-btn').onchange = perPageBtnHandler;
+    document.querySelector('.search-btn').onclick = searchBtnHandler;
+    document.querySelector('.search-field').addEventListener('keydown', function(e) {
+        if (e.keyCode === 13) {
+          downloadData(1);
+        }
+    });
 }
