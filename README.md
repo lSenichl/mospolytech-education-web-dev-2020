@@ -11,4 +11,4 @@ lab6 - Лабораторная работа 4 "Крестики-нолики и
 
 lab7 - Лабораторная работа 5 "AJAX: cat-facts"
 
-lab9 - Лабораторная работа 6 "Bootstrap. Landing page." (не готово)
+lab9 - Лабораторная работа 6 "Bootstrap. Landing page."
