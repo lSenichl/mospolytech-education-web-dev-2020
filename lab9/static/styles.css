@@ -1,0 +1,98 @@
+body {
+    font-family: 'Exo 2', regular;
+    color: white;
+    background-color: black;
+}
+
+iframe {
+    border-radius: 5px;
+}
+
+.banner {
+    background-color: black;
+    
+    color: white;
+}
+
+.call-to-action {
+    background-color: #3abad1;
+    color: white;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    border-top: 1px solid white;
+}
+
+.navbar {
+    background-color: black;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+.heading-line {
+    background-color: white;
+    width: 300px;
+    height: 5px;
+}
+
+.nav-link {
+    color: white;
+    font-size: large;
+}
+
+.carousel-item {
+    height: 90%;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+    
+}
+
+.carousel-item img {
+    margin-top: -15%;
+}
+
+.technologies img {
+    height: 100%;
+    width: 100%;
+}
+
+.fa-bars {
+    color: white;
+}
+
+.btn-outline-secondary {
+    background-color: transparent !important;
+    border-color: white;
+    color: white;
+    border-radius: 5;
+}
+
+.btn-outline-secondary:hover {
+    color: white !important;
+}
+
+.btn-secondary {
+    border-radius: 5;
+    background-color: white;
+    color: black;
+}
+
+.btn-secondary:hover {
+    color: white;
+    background-color: black;
+}
+
+.btn-primary {
+    border-radius: 5;
+    background-color: black;
+    color: white;
+    border-color: white !important;
+}
+
+.btn-primary:hover {
+    background-color: white;
+    color: white;
+}
